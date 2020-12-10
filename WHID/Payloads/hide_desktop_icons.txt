@@ -1,0 +1,20 @@
+Rem:Hide desktop icons, and disable right click
+Press:177
+Press:128+177
+CustomDelay:400
+Print:powershell
+CustomDelay:400
+Press:128+129+176
+CustomDelay:700
+Press:216
+Press:176
+CustomDelay:800
+Print:New-Item -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer -Force | Out-Null
+CustomDelay:200
+Press:176
+CustomDelay:200
+Print:New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoDesktop" -Value 1
+Press:176
+CustomDelay:200
+Print:shutdown -L
+Press:176
